@@ -1,0 +1,27 @@
+name: deploy
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout repo
+      - name: Checkout
+      - uses: actions/checkout@v2
+
+      # Build dist folder
+      - name: Build
+        run: npm run build
+
+      # Deploy dist folder to GH pages
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v1.3.0
+        with:
+          # Git branch where assets will be deployed
+          target_branch: master
+          # Build directory to deploy
+          build_dir: dist
