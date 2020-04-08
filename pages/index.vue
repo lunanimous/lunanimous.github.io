@@ -1,77 +1,85 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        lunanimous.github.io
-      </h1>
-      <h2 class="subtitle">
-        lunanimous website
-      </h2>
-      <div class="links">
+  <div>
+    <Navbar />
+
+    <div class="max-w-4xl mx-auto sm:flex items-center p-4 sm:p-6 my-16">
+      <div class="m-8">
+        <h2 class="text-4xl">Connect with the Nimiq blockchain</h2>
+        <h3
+          class="text-xl text-gray-600 mt-2"
+        >Discover a suite of tools and projects to start using the Nimiq blockchain today</h3>
+      </div>
+      <div class="bg-white shadow-xl rounded-lg p-12">
+        <img class="h-6" src="@/assets/images/nimiq-logo.svg" alt="nimiq" />
+        <p class="text-lg mt-6">Barrier-free value exchange for everyone.</p>
         <a
-          href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+          href="https://www.nimiq.com/"
+          class="block font-bold mt-8 text-teal-500 hover:text-teal-600"
+        >Visit nimiq.com</a>
       </div>
     </div>
+
+    <section id="projects" class="bg-white my-8 px-4 sm:px-8 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-center text-sm tracking-widest text-gray-500 uppercase">Projects</h3>
+        <h4 class="text-center text-2xl mt-6">Useful tools and full fledge applications</h4>
+
+        <div class="mt-8 flex flex-wrap -mx-4">
+          <Project v-for="(project, i) in this.projects" :key="i" :project="project"></Project>
+        </div>
+      </div>
+    </section>
+
+    <section id="playground" class="my-8 px-4 sm:px-8 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-center text-sm tracking-widest text-gray-500 uppercase">Playground</h3>
+        <h4 class="text-center text-2xl mt-6">Crazy ideas, explorations and funny games</h4>
+
+        <div class="mt-8 flex flex-wrap -mx-4">
+          <Project
+            v-for="(project, i) in this.playground"
+            :key="i"
+            :project="project"
+            color="white"
+          ></Project>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Navbar from '@/components/Navbar.vue';
+import Project from '@/components/Project.vue';
 
 export default {
   components: {
-    Logo
+    Navbar,
+    Project
+  },
+  data() {
+    return {
+      projects: [
+        {
+          name: 'Widgets',
+          description: 'Accept NIM payment and donation on your website easily',
+          link: 'https://lunanimous.github.io/nim-widgets/'
+        },
+        {
+          name: 'Minim',
+          description: 'Send and receive NIM directly from your mobile device',
+          link: 'https://lunanimous.github.io/nim-widgets/'
+        }
+      ],
+      playground: [
+        {
+          name: 'Tic Tac Toe',
+          description: 'The famous game powered by NIM transactions',
+          link: 'https://lunanimous.github.io/tic-tac-toe/'
+        }
+      ]
+    };
   }
-}
+};
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

@@ -1,7 +1,7 @@
 {
-  "name": "lunanimous.github.io",
+  "name": "lunanimous",
   "version": "1.0.0",
-  "description": "lunanimous website",
+  "description": "official lunanimous website",
   "author": "Mario",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "microtip": "^0.2.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
