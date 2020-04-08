@@ -11,7 +11,7 @@
       <a class="block py-2 px-4 text-gray-600 hover:text-gray-800" href="#projects">Projects</a>
       <a class="block py-2 px-4 text-gray-600 hover:text-gray-800" href="#playground">Playground</a>
       <a
-        class="block py-2 px-4 text-gray-600"
+        class="block py-2 px-4 text-gray-400"
         href="#blog"
         aria-label="Coming soon..."
         data-microtip-position="bottom-left"

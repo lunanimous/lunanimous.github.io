@@ -5,10 +5,8 @@
   "author": "Mario",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "start": "nuxt",
+    "build": "nuxt generate"
   },
   "dependencies": {
     "feather-icons": "^4.28.0",
