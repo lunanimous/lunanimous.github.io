@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "feather-icons": "^4.28.0",
     "microtip": "^0.2.2",
     "nuxt": "^2.0.0"
   },
