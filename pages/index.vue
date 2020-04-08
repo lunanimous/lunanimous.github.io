@@ -1,7 +1,5 @@
 <template>
   <div>
-    <Navbar />
-
     <div class="max-w-4xl mx-auto sm:flex items-center p-4 sm:p-6 my-16">
       <div class="m-8">
         <h2 class="text-4xl">Connect with the Nimiq blockchain</h2>
@@ -50,12 +48,10 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
 import Project from '@/components/Project.vue';
 
 export default {
   components: {
-    Navbar,
     Project
   },
   data() {
@@ -63,20 +59,26 @@ export default {
       projects: [
         {
           name: 'Widgets',
-          description: 'Accept NIM payment and donation on your website easily',
+          description:
+            'Accept NIM payment and donation on your website easily.',
           link: 'https://lunanimous.github.io/nim-widgets/'
         },
         {
           name: 'Minim',
-          description: 'Send and receive NIM directly from your mobile device',
-          link: 'https://lunanimous.github.io/nim-widgets/'
+          description: 'Send and receive NIM directly from your mobile device.',
+          link: null
         }
       ],
       playground: [
         {
           name: 'Tic Tac Toe',
-          description: 'The famous game powered by NIM transactions',
+          description: 'The famous game powered by NIM transactions.',
           link: 'https://lunanimous.github.io/tic-tac-toe/'
+        },
+        {
+          name: 'Cashlinkator',
+          description: 'Generate multiple cashlinks with one transaction.',
+          link: null
         }
       ]
     };

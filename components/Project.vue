@@ -35,13 +35,18 @@
       <p class="text-gray-600 mt-2">{{this.project.description}}</p>
 
       <a
+        v-if="this.project.link"
         :href="this.project.link"
         target="_blank"
-        class="inline-block mt-4 text-teal-500 hover:text-teal-600"
+        class="inline-block mt-5 text-teal-500 hover:text-teal-600"
       >
         Go to
         <b class="font-bold">{{this.project.name}}</b>
       </a>
+      <p
+        v-if="!this.project.link"
+        class="inline-block mt-4 py-2 px-3 bg-gray-300 text-gray-600 rounded-full text-sm"
+      >Under construction...</p>
     </div>
   </div>
 </template>
